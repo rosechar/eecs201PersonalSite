@@ -1,0 +1,9 @@
+.body {
+    font-family: 'Oswald', sans-serif;
+    background-color: beige;
+}
+
+.h1 {
+    float: left;
+    font-size: large;
+}
