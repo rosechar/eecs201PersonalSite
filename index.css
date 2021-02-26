@@ -8,6 +8,10 @@
     font-size: large;
 }
 
+#header {
+    float:center;
+}
+
 .button {
     color: azure;
     fill-opacity: 50;
