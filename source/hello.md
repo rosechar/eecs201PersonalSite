@@ -7,7 +7,7 @@ Paragraphs are separated by a blank line.
 look like:
 
   * this 
-  * that
+  * th
   * the other 
 
 Note that --- not considering the asterisk --- the actual text
