@@ -8,7 +8,7 @@ look like:
 
   * this 
   * that o
-  * the other one
+  * the other 
 
 Note that --- not considering the asterisk --- the actual text
 content starts at 4-columns in.
