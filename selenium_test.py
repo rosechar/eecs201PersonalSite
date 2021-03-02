@@ -12,11 +12,11 @@ for update in updates:
     print(update.text.split('\n')[0])
 for link in links:
     url = link.get_attribute('href')
-    print(url)
     driver2 = webdriver.Chrome()
     driver2.get(url)
     if ("404" in driver2.page_source):
         print('this url is invalid:' + url)
+        driver2.close()
         exit(1)
     driver2.close()
 driver.close()
