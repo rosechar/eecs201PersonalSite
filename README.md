@@ -12,7 +12,8 @@ uses git hooks (pre-commit and post-commit) to automate the deploy process
 ## pre-commit hook:
 - checks whether commit contains markdown files
 - if it does, run lint check
-- if pass lint, convert to html with pandoc
+- convert to html with pandoc
+- update updates.html to include new post
 - unstage markdown files so they don't get added to remote repo 
 
 ## post-commit hook:
@@ -21,9 +22,9 @@ uses git hooks (pre-commit and post-commit) to automate the deploy process
 - run selenium_test.py
 
 # Selenium automation
-- prints each post title
+- prints each post title to console 
 - checks each post url to see if it is valid
-- prints error with url if invalid
+- prints error with url to console if invalid
 
 # lighthouse automation 
 - integrated with git actions
