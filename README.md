@@ -15,7 +15,7 @@ uses git hooks (pre-commit and post-commit) to automate the deploy process
 - if pass lint, convert to html with pandoc
 - unstage markdown files so they don't get added to remote repo 
 
-# # post-commit hook:
+## post-commit hook:
 - stage html post and updated updates.html
 - push to remote 
 - run selenium_test.py
