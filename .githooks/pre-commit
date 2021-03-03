@@ -1,0 +1,32 @@
+#!/bin/sh
+
+var=$($(git diff --cached --quiet -- source); echo $?)
+# no new markdown files
+if [[ $var == 0 ]]
+then
+  exit 0
+else
+  path=$(git diff --cached --name-only)
+  name=${path#"source/"}
+  name=${name%".md"}
+  # style check
+  var=$(markdownlint "$path"; echo $?)
+  if [[ $var == 0 ]]
+  then
+    # convert to html
+    pandoc -o "updates/$name.html" -f markdown -t html "$path"
+    url="'https://rosechar.github.io/updates/${name}.html'"
+    url=${url// /%20}
+    html="<div id='update'> <h1 id='title'> ${name} </h1> <a href=${url} class='button btn-primary'> read... </a> </div>"
+    gsed -i -e "/<!-- dynamically insert here -->/a\ ${html}" updates.html
+    # unstage markdown files
+    git restore --staged '*.md'
+    exit 0
+  else
+    echo 'ERROR: invalid markdown syntax'
+    exit 1
+  fi
+fi
+
+exit 0
+

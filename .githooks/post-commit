@@ -1,0 +1,7 @@
+# #!/bin/sh
+
+git add .
+git commit -m "new HTML file and updated updates.html"
+git push
+python3 selenium_test.py
+exit 0
